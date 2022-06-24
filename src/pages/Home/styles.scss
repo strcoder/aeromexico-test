@@ -1,0 +1,23 @@
+@import '../../sass/base/variables';
+
+.Home {
+  padding: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .Home {
+    padding: 10%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Home {
+    padding: 20% 50px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .Home {
+    padding: 25% 50px;
+  }
+}

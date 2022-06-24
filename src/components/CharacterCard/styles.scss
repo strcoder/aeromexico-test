@@ -7,6 +7,7 @@
 
 .CharacterCard__header {
   padding: 8px;
+  height: calc(100vw / 5);
   justify-content: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -26,12 +27,13 @@
 }
 
 .CharacterCard__header--image {
-  width: 80px;
-  height: 80px;
+  width: calc(100vw / 6);
+  height: calc(100vw / 6);
   border-radius: 50%;
   & img {
     object-fit: cover;
     border-radius: 50%;
+    object-position: top;
   }
 }
 
@@ -45,10 +47,11 @@
 .CharacterCard__body--status {
   color: $grey;
   display: flex;
-  justify-content: space-around;
   font-weight: 600;
   grid-row-start: 2;
   font-size: $font-size-xs;
+  text-transform: uppercase;
+  justify-content: space-around;
   & button {
     color: $grey;
     padding: 4px;
@@ -68,6 +71,7 @@
 
 .CharacterCard__body--info {
   display: none;
+  text-transform: capitalize;
 }
 
 @media screen and (min-width: 768px) {
@@ -76,15 +80,11 @@
   }
 
   .CharacterCard__header {
+    height: auto;
     align-items: center;
     border-top-right-radius: 0;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-  }
-
-  .CharacterCard__header--image {
-    width: 180px;
-    height: 180px;
   }
 
   .CharacterCard__body {
@@ -97,13 +97,14 @@
   .CharacterCard__body--status {
     grid-row-start: 1;
     align-items: center;
-    font-size: $font-size-base;
+    font-size: $font-size-sm;
     justify-content: space-between;
     & div {
       display: flex;
     }
     & div p:first-child::after {
       content: '/';
+      padding: 0 4px;
     }
     & button {
       font-size: xx-large;

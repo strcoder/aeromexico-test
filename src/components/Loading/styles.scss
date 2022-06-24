@@ -1,0 +1,17 @@
+@import '../../sass/base/variables';
+
+.Loading {
+  gap: 20px;
+  width: 100%;
+  height: 100vh;
+  justify-items: center;
+  align-content: center;
+  & span {
+    color: $white;
+    font-size: 80px;
+    animation-name: loading;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}

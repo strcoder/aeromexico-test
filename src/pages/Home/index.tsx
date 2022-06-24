@@ -1,40 +1,13 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import CharacterCard from '../../components/CharacterCard';
-import { getCharacters } from '../../redux/actions';
+import React from 'react';
+import CharactersList from '../../containers/CharactersList';
+import './styles.scss';
 
-const Home = ({ getCharacters, characters }) => {
-
-  useEffect(() => {
-    if (!characters || characters.length === 0) {
-      getCharacters();
-    }
-  }, []);
-
+const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      {characters && characters.length !== 0 && (
-        <>
-          {characters.map((character) => (
-            <CharacterCard
-              character={character}
-            />
-          ))}
-        </>
-      )}
-    </div>
+    <main className='Home'>
+      <CharactersList />
+    </main>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    characters: state.characters,
-  };
-};
-
-const mapDispatchToProps = {
-  getCharacters,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;
