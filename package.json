@@ -1,0 +1,64 @@
+{
+  "name": "aeromexico-test",
+  "version": "1.0.0",
+  "description": "Evalución frontend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon & npx servor public",
+    "start": "npx servor public",
+    "build": "node esbuild",
+    "serve": "json-server server/db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strcoder/aeromexico-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strcoder/aeromexico-test/issues"
+  },
+  "homepage": "https://github.com/strcoder/aeromexico-test#readme",
+  "dependencies": {
+    "esbuild": "^0.14.47",
+    "esbuild-plugin-sass": "^1.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.32.2",
+    "react-icons": "^4.4.0",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0",
+    "redux": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
+    "@babel/runtime": "^7.18.3",
+    "@testing-library/dom": "^8.14.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.1",
+    "@types/eslint": "^7.28.0",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-router": "^5.1.18",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.1.1",
+    "nodemon": "^2.0.18",
+    "typescript": "^4.7.4"
+  }
+}
