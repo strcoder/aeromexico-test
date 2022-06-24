@@ -21,15 +21,18 @@
   },
   "homepage": "https://github.com/strcoder/aeromexico-test#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "esbuild": "^0.14.47",
     "esbuild-plugin-sass": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.32.2",
     "react-icons": "^4.4.0",
+    "react-redux": "^8.0.2",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
-    "redux": "^4.2.0"
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.18.5",
