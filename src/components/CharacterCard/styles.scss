@@ -1,0 +1,124 @@
+@import '../../sass/base/variables';
+
+.CharacterCard {
+  border-radius: 5px;
+  background-color: $white;
+}
+
+.CharacterCard__header {
+  padding: 8px;
+  justify-content: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: $basic-gradient;
+  &.Gryffindor {
+    background: $gryffindor-gradient;
+  }
+  &.Slytherin {
+    background: $slytherin-gradient;
+  }
+  &.Hufflepuff {
+    background: $hufflepuff-gradient;
+  }
+  &.Ravenclaw {
+    background: $ravenclaw-gradient;
+  }
+}
+
+.CharacterCard__header--image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  & img {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.CharacterCard__body {
+  gap: 4px;
+  padding: 12px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.CharacterCard__body--status {
+  color: $grey;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+  grid-row-start: 2;
+  font-size: $font-size-xs;
+  & button {
+    color: $grey;
+    padding: 4px;
+    font-size: $font-size-xxl;
+  }
+  & button.true {
+    color: #333333;
+  }
+}
+
+.CharacterCard__body--title {
+  font-weight: 600;
+  grid-row-start: 1;
+  text-align: center;
+  font-size: $h3-font-size;
+}
+
+.CharacterCard__body--info {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .CharacterCard {
+    grid-template-columns: 0.5fr 1fr;
+  }
+
+  .CharacterCard__header {
+    align-items: center;
+    border-top-right-radius: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .CharacterCard__header--image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .CharacterCard__body {
+    padding: 20px 25px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .CharacterCard__body--status {
+    grid-row-start: 1;
+    align-items: center;
+    font-size: $font-size-base;
+    justify-content: space-between;
+    & div {
+      display: flex;
+    }
+    & div p:first-child::after {
+      content: '/';
+    }
+    & button {
+      font-size: xx-large;
+    }
+  }
+
+  .CharacterCard__body--title {
+    grid-row-start: 2;
+    text-align: left;
+    font-size: $h1-font-size;
+  }
+
+  .CharacterCard__body--info {
+    gap: 8px;
+    display: grid;
+    padding-top: 20px;
+  }
+}

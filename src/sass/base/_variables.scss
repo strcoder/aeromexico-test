@@ -5,6 +5,7 @@ $cyan: #04ACF4;
 $blue: #0056b3;
 $pink: #FCC4DC;
 $gray: #A6ABBD;
+$grey: #999999;
 $green: #048444;
 $white: #ffffff;
 $black: #111111;
@@ -23,6 +24,12 @@ $gray-600: #93a4bc;
 $gray-700: #525c6b;
 $gray-800: #4d535b;
 $gray-900: #424953;
+
+$basic-gradient: linear-gradient(358.61deg, #181818 4.67%, #4b4b4b 96.97%);
+$gryffindor-gradient: linear-gradient(358.61deg, #FF0000 4.67%, #FED482 96.97%);
+$slytherin-gradient: linear-gradient(135deg, #1C792B 0%, #82E95E 100%);
+$hufflepuff-gradient: linear-gradient(135deg, #FFC700 0%, #FFF388 100%);
+$ravenclaw-gradient: linear-gradient(135deg, #0597B7 0%, #66D1FF 100%);
 
 //* Shadows *//
 $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;

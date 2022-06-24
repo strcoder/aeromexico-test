@@ -1,0 +1,30 @@
+a {
+  text-decoration: none;
+}
+
+button, a {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 14px;
+  text-align: center;
+  font-size: $font-size-base;
+  transition: $transition-base;
+  border-radius: $border-radius;
+  font-family: $font-family-base;
+  & .btn-icon {
+    font-size: $icon-size-xs;
+    transition: $transition-base;
+  }
+  &:hover { transform: translateY(-2px); }
+  &:active { transform: translateY(1px); }
+}
+
+.btn {
+  @include button();
+}
+
+a,
+.btn-link {
+  @include buttonLink($black);
+}
