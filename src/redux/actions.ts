@@ -25,6 +25,11 @@ export const setStudents = (students) => ({
   students,
 });
 
+export const setFavorites = (favorites) => ({
+  type: 'SET_FAVORITES',
+  favorites,
+});
+
 export const getCharacters = () => {
   return (dispatch) => {
     axios({
@@ -74,5 +79,20 @@ export const getStudents = () => {
     }).catch((error) => {
       dispatch(setError(error));
     });
+  };
+};
+
+export const addFavorite = (favorites, character) => {
+  return (dispatch) => {
+    const _favorites = favorites;
+    _favorites.push(character);
+    dispatch(setFavorites(_favorites));
+  };
+};
+
+export const removeFavorite = (favorites, character) => {
+  return (dispatch) => {
+    const _favorites = favorites.filter((element) => element.name !== character.name);
+    dispatch(setFavorites(_favorites));
   };
 };

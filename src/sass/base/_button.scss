@@ -28,3 +28,7 @@ a,
 .btn-link {
   @include buttonLink($black);
 }
+
+.btn-link-white {
+  @include buttonLink($white);
+}

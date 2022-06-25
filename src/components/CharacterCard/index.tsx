@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { HiOutlineBookmark, HiBookmark } from 'react-icons/hi';
 import './styles.scss';
 
@@ -25,10 +25,12 @@ type CharacterCardProps = {
     alive?: boolean;
     image?: string;
   };
+  isFavorite?: boolean
+  addFavorite?: () => void;
+  removeFavorite?: () => void;
 };
 
-const CharacterCard = ({ character }: CharacterCardProps) => {
-  const [favorite, setFavorite] = useState<boolean>(false);
+const CharacterCard = ({ character, isFavorite, addFavorite, removeFavorite }: CharacterCardProps) => {
   return (
     <div className='CharacterCard'>
       <div className={`CharacterCard__header ${character.house}`}>
@@ -45,10 +47,10 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
           <div>
             <button
               type='button'
-              className={`btn-link ${favorite}`}
-              onClick={() => setFavorite(!favorite)}
+              className={`btn-link ${isFavorite}`}
+              onClick={isFavorite ? removeFavorite : addFavorite}
             >
-              {favorite ? <HiBookmark /> : <HiOutlineBookmark />}
+              {isFavorite ? <HiBookmark /> : <HiOutlineBookmark />}
             </button>
           </div>
         </div>

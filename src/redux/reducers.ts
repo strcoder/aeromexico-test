@@ -20,6 +20,11 @@ const reducer = (state, payload) => {
         ...state,
         students: payload.students,
       };
+    case 'SET_FAVORITES':
+      return {
+        ...state,
+        favorites: [...payload.favorites],
+      };
     case 'SET_ERROR': return state;
     default: return state;
   }

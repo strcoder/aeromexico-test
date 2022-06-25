@@ -1,0 +1,50 @@
+@import '../../sass/base/variables';
+
+.AddingForm {
+  gap: 25px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.AddingForm__label {
+  gap: 8px;
+  display: grid;
+}
+
+.AddingForm__radio {
+  gap: 8px 16px;
+  grid-template-columns: repeat(2, 1fr);
+  & > p {
+    grid-column-end: span 2;
+  }
+}
+
+.AddingForm__file,
+.AddingForm__button {
+  grid-column-end: span 2;
+}
+
+.AddingForm__file {
+  & input {
+    opacity: 0;
+  }
+}
+
+.AddingForm__button {
+  justify-self: center;
+}
+
+.AddingForm__radio--options {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  padding: 20px;
+  background-color: #f1f3f7;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom: 1px solid #263238;
+}
