@@ -5,8 +5,15 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+@media screen and (min-width: 768px) {
+  .CharacterList {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .CharacterList {
     gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

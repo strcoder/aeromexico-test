@@ -29,6 +29,8 @@
 .CharacterCard__header--image {
   width: calc(100vw / 6);
   height: calc(100vw / 6);
+  max-width: 150px;
+  max-height: 150px;
   border-radius: 50%;
   & img {
     object-fit: cover;

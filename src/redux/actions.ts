@@ -82,6 +82,19 @@ export const getStudents = () => {
   };
 };
 
+export const filterCharacter = (type: 'students' | 'staff' | 'gryffindor' | 'characters') => {
+  return (dispatch) => {
+    axios({
+      method: 'GET',
+      url: `http://localhost:3000/${type}`,
+    }).then(({ data }) => {
+      dispatch(setCharacters(data));
+    }).catch((error) => {
+      dispatch(setError(error));
+    });
+  };
+};
+
 export const addFavorite = (favorites, character) => {
   return (dispatch) => {
     const _favorites = favorites;

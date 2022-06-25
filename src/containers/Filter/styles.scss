@@ -1,0 +1,37 @@
+@import '../../sass/base/variables';
+
+.Filter {
+  gap: 20px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 40px;
+  & p {
+    color: $white;
+    font-size: $font-size-lg;
+  }
+}
+
+.Filter__selector {
+  gap: 10px;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
+  & button {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .Filter {
+    & p {
+      font-size: $font-size-xxl;
+    }
+  }
+  .Filter__selector {
+    gap: 100px;
+    justify-self: center;
+    & button {
+      min-width: 300px;
+      width: fit-content;
+    }
+  }
+}

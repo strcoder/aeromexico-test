@@ -4,20 +4,32 @@
   padding: 25px;
 }
 
+.Home__title {
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+.Home__title--image {
+  width: 125px;
+}
+
 @media screen and (min-width: 768px) {
   .Home {
     padding: 10%;
+  }
+  .Home__title--image {
+    width: 200px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .Home {
-    padding: 20% 50px;
+    padding: 50px 10%;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .Home {
-    padding: 25% 50px;
+    padding: 50px 20%;
   }
 }
