@@ -35,7 +35,7 @@ const CharacterCard = ({ character, isFavorite, addFavorite, removeFavorite }: C
     <div className='CharacterCard'>
       <div className={`CharacterCard__header ${character.house}`}>
         <figure className='CharacterCard__header--image'>
-          <img src={character.image} alt={character.name} />
+          <img src={character.image || 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png'} alt={character.name} />
         </figure>
       </div>
       <div className='CharacterCard__body'>

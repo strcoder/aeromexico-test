@@ -13,7 +13,10 @@ const composeEnhancers = compose;
 
 const store = createStore(
   reducers,
-  { favorites: [] },
+  {
+    favorites: [],
+    characters: [],
+  },
   composeEnhancers(applyMiddleware(thunk)),
 );
 

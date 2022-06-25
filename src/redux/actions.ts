@@ -10,6 +10,11 @@ export const setCharacters = (characters) => ({
   characters,
 });
 
+export const addCharacter = (character) => ({
+  type: 'ADD_CHARACTERS',
+  character,
+});
+
 export const setGryffindor = (gryffindor) => ({
   type: 'SET_GRYFFINDOR',
   gryffindor,
@@ -37,6 +42,20 @@ export const getCharacters = () => {
       url: 'http://localhost:3000/characters',
     }).then(({ data }) => {
       dispatch(setCharacters(data));
+    }).catch((error) => {
+      dispatch(setError(error));
+    });
+  };
+};
+
+export const createCharacters = (character) => {
+  return (dispatch) => {
+    axios({
+      method: 'POST',
+      url: 'http://localhost:3000/characters',
+      data: character,
+    }).then(({ data }) => {
+      dispatch(addCharacter(data));
     }).catch((error) => {
       dispatch(setError(error));
     });

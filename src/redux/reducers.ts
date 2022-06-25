@@ -5,6 +5,14 @@ const reducer = (state, payload) => {
         ...state,
         characters: payload.characters,
       };
+    case 'ADD_CHARACTERS':
+      return {
+        ...state,
+        characters: [
+          ...state.characters,
+          payload.character,
+        ],
+      };
     case 'SET_GRYFFINDOR':
       return {
         ...state,
