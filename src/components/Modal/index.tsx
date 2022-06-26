@@ -40,7 +40,7 @@ const Modal = ({ show, onClose, children, title, theme = 'light' }: ModalProps) 
           <button
             type='button'
             onClick={handleCloseClick}
-            title='Cerrar modal'
+            title='Cerrar ventana'
             className={`btn-link-${theme === 'light' ? 'danger' : 'soft'}`}
           >
             <FaTimes size={20} />
@@ -53,7 +53,7 @@ const Modal = ({ show, onClose, children, title, theme = 'light' }: ModalProps) 
     </section>
   ) : null;
 
-  if (isBrowser && !document.getElementById('modal')) {
+  if (isBrowser && !document?.getElementById('modal')) {
     const modalRoot = document.createElement('div');
     modalRoot.setAttribute('id', 'modal-root');
     document.body.appendChild(modalRoot);
@@ -66,14 +66,16 @@ const Modal = ({ show, onClose, children, title, theme = 'light' }: ModalProps) 
     );
   }
 
-  const modal = document.getElementById('modal');
-
-  if (isBrowser && modal) {
-    return ReactDOM.createPortal(
-      modalContent,
-      modal,
-    );
+  if (document && typeof document !== 'undefined') {
+    const modal = document.getElementById('modal');
+    if (isBrowser && modal) {
+      return ReactDOM.createPortal(
+        modalContent,
+        modal,
+      );
+    }
   }
+
   return null;
 };
 

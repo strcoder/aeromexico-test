@@ -39,6 +39,7 @@ const FavoriteCard = ({ character, removeFavorite }: FavoriteCardProps) => {
         type='button'
         onClick={removeFavorite}
         className='btn-link-white'
+        title='Eliminar de favoritos'
       >
         <FiTrash2 />
       </button>

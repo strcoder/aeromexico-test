@@ -4,22 +4,19 @@ import { render, fireEvent } from '@testing-library/react';
 import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom';
 import Modal from './index';
-import { TestWithi18next } from '../../utils/translations/TestWithi18next';
 
 describe('<Modal />', () => {
   test('Modal shows the title and the children and a close button', () => {
     const handleClose = jest.fn();
 
     const { getByText } = render(
-      <TestWithi18next>
-        <Modal
-          show={true}
-          title='Titulo'
-          onClose={handleClose}
-        >
-          <p>Prueba</p>
-        </Modal>
-      </TestWithi18next>,
+      <Modal
+        show={true}
+        title='Titulo'
+        onClose={handleClose}
+      >
+        <p>Prueba</p>
+      </Modal>,
     );
 
     expect(getByText('Titulo')).toBeTruthy();
