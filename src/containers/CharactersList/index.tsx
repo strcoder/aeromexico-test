@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import Menu from '../Menu';
@@ -7,46 +7,77 @@ import { getCharacters, addFavorite, removeFavorite } from '../../redux/actions'
 import CharacterCard from '../../components/CharacterCard';
 import './styles.scss';
 
-const CharacterList = ({ characters, favorites, getCharacters, addFavorite, removeFavorite }) => {
+type PropsTypes = {
+  characters: any[];
+  favorites: any[];
+  getCharacters: (arg0?: any) => void;
+  addFavorite: (arg0?: any, arg1?: any) => void;
+  removeFavorite: (arg0?: any, arg1?: any) => void;
+};
 
-  const handleAddFavorite = (character) => {
+class CharacterList extends React.Component<PropsTypes, PropsTypes> {
+
+  constructor(props: PropsTypes) {
+    super(props);
+    this.state = {
+      characters: props.characters,
+      favorites: props.favorites,
+      getCharacters: props.getCharacters,
+      addFavorite: props.addFavorite,
+      removeFavorite: props.removeFavorite,
+    };
+  }
+
+  handleAddFavorite = (character) => {
+    const { addFavorite, favorites } = this.state as PropsTypes;
     addFavorite(favorites, character);
   };
 
-  const handleRemoveFavorite = (character) => {
+  handleRemoveFavorite = (character) => {
+    const { removeFavorite, favorites } = this.state;
     removeFavorite(favorites, character);
   };
 
-  const isFavorite = (character) => {
+  isFavorite = (character) => {
+    const { favorites } = this.state;
     const element = favorites?.find((element) => element.name === character.name);
     return !!element;
   };
 
-  useEffect(() => {
+  componentDidMount() {
+    const { characters, getCharacters } = this.state;
     if (!characters || characters.length === 0) {
       getCharacters();
     }
-  }, []);
-
-  if (!characters || characters.length === 0) {
-    return (
-      <Loading />
-    );
   }
 
-  return (
-    <section className='CharacterList'>
-      {characters.map((character) => (
-        <CharacterCard
-          character={character}
-          isFavorite={isFavorite(character)}
-          addFavorite={() => handleAddFavorite(character)}
-          removeFavorite={() => handleRemoveFavorite(character)}
-        />
-      ))}
-      <Menu />
-    </section>
-  );
+  // eslint-disable-next-line react/no-deprecated
+  componentWillReceiveProps(newProps) {
+    this.setState(newProps);
+  }
+
+  render() {
+    const { characters } = this.state;
+    if (!characters || characters.length === 0) {
+      return (
+        <Loading />
+      );
+    }
+
+    return (
+      <section className='CharacterList'>
+        {characters.map((character) => (
+          <CharacterCard
+            character={character}
+            isFavorite={this.isFavorite(character)}
+            addFavorite={() => this.handleAddFavorite(character)}
+            removeFavorite={() => this.handleRemoveFavorite(character)}
+          />
+        ))}
+        <Menu />
+      </section>
+    );
+  };
 };
 
 const mapStateToProps = (state) => {
